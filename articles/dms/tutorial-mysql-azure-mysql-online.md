@@ -114,7 +114,10 @@ For example:
 mysql.exe -h shausample.mysql.database.azure.com -u dms@shausample -p employees < d:\employees.sql
  ```
 
-If you have foreign keys in your schema, the initial load and continuous sync of the migration will fail.  Execute the following script in MySQL Workbench to extract the drop foreign key script and add foreign key script.
+If you have foreign keys in your schema, the initial load and continuous sync of the migration will fail.  Execute the following script on both source and target databases in MySQL Workbench to extract the drop foreign key script and add foreign key script.
+
+> [!NOTE]
+> Change 'SchemaName' to your schema name in where clause.
 
 ```sql
 SET group_concat_max_len = 8192;
